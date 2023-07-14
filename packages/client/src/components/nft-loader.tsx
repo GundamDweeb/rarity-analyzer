@@ -16,6 +16,7 @@ export const NftLoader = ({
 
     const [nft, setNft] = useState(null as null | INftRarityWithExtra);
     const [error,setError] = useState('');
+    const [contractAdd, setContractAdd] = useState(contractAddress);
 
     useEffect(() => {
         (async () => {
@@ -35,18 +36,18 @@ export const NftLoader = ({
             setNft(obj);
 
             // Try to get contractAddress from project data
-            if(!contractAddress){
+            if(!contractAdd){
                 // Load from project
                 const nftProjectUrl = getProjectJsonUrl(projectKey);
                 // console.log('projectKey', { projectKey, nftProjectUrl });
                 const result = await fetch(nftProjectUrl);
                 const obj = await result.json() as INftProjectRarityDocument;
                 //@ts-ignore
-                contractAddress = obj.project.contract;
+                setContractAdd(obj.project.contract);
 
                 changeTheme(obj.project.theme);
 
-                if(!contractAddress){ return; }
+                if(!contractAdd){ return; }
             }
 
             // Load open sea data

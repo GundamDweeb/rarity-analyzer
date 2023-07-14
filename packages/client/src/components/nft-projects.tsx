@@ -49,6 +49,7 @@ export const NftProjectCard = ({projectKey, project}:{ projectKey:string, projec
     const targetId =  projectKey + '_theme';
     useEffect(()=>{
         changeTheme(project.theme, `#${targetId}`);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [targetId]);
 
     return (

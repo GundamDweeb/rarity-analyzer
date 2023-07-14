@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import type { INftProjectMetadataDocument, INftProjectRarityDocument, INftRarity, MISSING_ATTRIBUTE_VALUE as MISSING_ATTRIBUTE_VALUE_TYPE } from '@crypto-dev-amigos/common';
+import type { INftProjectMetadataDocument, INftProjectRarityDocument, MISSING_ATTRIBUTE_VALUE as MISSING_ATTRIBUTE_VALUE_TYPE } from '@crypto-dev-amigos/common';
 import { LazyList } from './lazy-list';
 import { NftLoader } from './nft-loader';
 import { getIpfsUrl, getProjectJsonUrl } from '../helpers/urls';

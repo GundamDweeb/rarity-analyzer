@@ -77,7 +77,7 @@ export const TraitGrid = ({
      // eslint-disable-next-line react-hooks/exhaustive-deps
     },[redrawKey, tokenIds.size, traitSort, isExpanded]);
 
-    const heightRatio = Math.max(0.25,Math.min(0.75,tokenIds.size * 0.1));
+    //const heightRatio = Math.max(0.25,Math.min(0.75,tokenIds.size * 0.1));
 
     const SortButton = ({value}:{value:TraitSortKind})=>{
         return (

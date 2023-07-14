@@ -35,7 +35,7 @@ window.addEventListener('load', ()=>{
     observer.observe(document.getElementsByTagName('body')[0]);
 });
 
-let nextLazyComponentId = 0;
+//let nextLazyComponentId = 0;
 
 export const LazyComponent = ({ 
     children,
