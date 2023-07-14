@@ -17,7 +17,7 @@ export const NftLoader = ({
     const [nft, setNft] = useState(null as null | INftRarityWithExtra);
     const [error,setError] = useState('');
     const [contractAdd, setContractAdd] = useState(contractAddress);
-
+   
     useEffect(() => {
         (async () => {
 
@@ -31,7 +31,7 @@ export const NftLoader = ({
                 setError('Not Found');
                 return;
             }
-
+            let contractAddress = "";
             obj.attributeRarities.sort((a,b)=>a.trait_type.localeCompare(b.trait_type));
             setNft(obj);
 
@@ -44,7 +44,7 @@ export const NftLoader = ({
                 const obj = await result.json() as INftProjectRarityDocument;
                 //@ts-ignore
                 setContractAdd(obj.project.contract);
-
+                contractAddress = obj.project.contract;
                 changeTheme(obj.project.theme);
 
                 if(!contractAdd){ return; }
