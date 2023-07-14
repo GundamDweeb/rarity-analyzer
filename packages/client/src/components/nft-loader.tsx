@@ -31,7 +31,7 @@ export const NftLoader = ({
                 setError('Not Found');
                 return;
             }
-            let addy = "";
+            let addy;
             obj.attributeRarities.sort((a,b)=>a.trait_type.localeCompare(b.trait_type));
             setNft(obj);
 
@@ -44,10 +44,11 @@ export const NftLoader = ({
                 const obj = await result.json() as INftProjectRarityDocument;
                 //@ts-ignore
                 setContractAdd(obj.project.contract);
+                //@ts-ignore
                 addy = obj.project.contract;
                 changeTheme(obj.project.theme);
 
-                if(!contractAdd){ return; }
+                if(!addy){ return; }
             }
 
             // Load open sea data
