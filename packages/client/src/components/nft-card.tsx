@@ -1,7 +1,5 @@
 import React from 'react';
 import { INftRarity } from '@crypto-dev-amigos/common';
-import { LazyComponent } from './lazy-component';
-import { getIpfsUrl } from '../helpers/urls';
 import { BarGraphCell } from './bar-graph';
 import { Icon, IconLink, LoadingIndicator } from './icons';
 import { SmartImage } from './smart-image';

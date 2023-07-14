@@ -1,12 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import type { INftProjectMetadataDocument, INftProjectRarityDocument, INftRarity, MISSING_ATTRIBUTE_VALUE as MISSING_ATTRIBUTE_VALUE_TYPE } from '@crypto-dev-amigos/common';
-import { NftCard } from './nft-card';
 import { LazyList } from './lazy-list';
 import { NftLoader } from './nft-loader';
-import { getIpfsUrl, getNftJsonUrl, getProjectJsonUrl } from '../helpers/urls';
+import { getIpfsUrl, getProjectJsonUrl } from '../helpers/urls';
 import { BarGraphCell } from './bar-graph';
 import { changeTheme } from '../helpers/theme';
-import { Icon, IconLink, IconName, LoadingIndicator } from './icons';
+import { Icon, IconLink, LoadingIndicator } from './icons';
 import { SmartImage } from './smart-image';
 import { ALL_TRAIT_VALUE, OnSelectTraitValue, TraitFilters } from './types';
 import { TraitGraph } from './trait-graph';

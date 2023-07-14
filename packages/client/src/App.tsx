@@ -3,7 +3,6 @@ import './CssReset.css';
 import './App.css';
 import { NftLoader } from './components/nft-loader';
 import { NftProjectLoader } from './components/nft-project';
-import { NftProjectsLoader } from './components/nft-projects';
 import { Layout } from './components/layout';
 import { HomePage } from './components/home-page';
 

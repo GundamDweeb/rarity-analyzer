@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { INftProjectRarityDocument, INftRarityDocument } from '@crypto-dev-amigos/common';
 import { INftRarityWithExtra, NftCard, NftCardPlaceholder } from './nft-card';
 import { getNftJsonUrl, getProjectJsonUrl } from '../helpers/urls';
@@ -41,6 +41,7 @@ export const NftLoader = ({
                 // console.log('projectKey', { projectKey, nftProjectUrl });
                 const result = await fetch(nftProjectUrl);
                 const obj = await result.json() as INftProjectRarityDocument;
+                //@ts-ignore
                 contractAddress = obj.project.contract;
 
                 changeTheme(obj.project.theme);

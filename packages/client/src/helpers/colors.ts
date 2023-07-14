@@ -30,7 +30,7 @@
      const vMin = Math.min(rNorm, gNorm, bNorm);
      const l = (vMax + vMin) / 2;
  
-     if (vMax == vMin) {
+     if (vMax === vMin) {
          // No color
          return {
              h: 0,

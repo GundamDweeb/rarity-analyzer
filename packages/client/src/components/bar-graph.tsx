@@ -1,4 +1,3 @@
-import React, { useRef } from 'react';
 
 export const BarGraphCell = ({ ratio, text, textRight }:{ ratio: number, text?: string, textRight?: string })=>{
     return (

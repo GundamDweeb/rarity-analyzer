@@ -56,6 +56,7 @@ export const TraitGraph = ({
             isMounted = false;
             window.removeEventListener('resize', redrawOuter);
         };
+     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[redrawKey, tokenIds.size, rareCount, isExpanded]);
 
     const heightRatio = Math.max(0.25,Math.min(0.75,tokenIds.size * 0.1));

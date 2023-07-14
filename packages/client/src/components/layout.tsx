@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { ThemeSubscription } from "../helpers/theme";
 import { Icon } from "./icons";
 
 export const Layout = ({ children }:{ children:JSX.Element }) => {
-
+    //@ts-ignore
     const [isDark, setIsDark] = useState(true);
 
     useEffect(()=>{
         ThemeSubscription.subscribe(setIsDark);
+   // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
 
     return (

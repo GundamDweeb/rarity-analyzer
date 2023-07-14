@@ -2,7 +2,6 @@ import { INftProjectRarityDocument } from '@crypto-dev-amigos/common';
 import React, { useEffect, useRef, useState } from 'react';
 import { ALL_TRAIT_VALUE, TraitFilters, OnSelectTraitValue } from './types';
 import { Icon, LoadingIndicator } from './icons';
-import { colorFormat } from '../helpers/colors';
 import { getTraitColor } from '../helpers/trait-colors';
 import { sortTraits, TraitSortKind } from '../helpers/trait-sort';
 import { Trait } from '../helpers/types';
@@ -29,7 +28,7 @@ export const TraitGrid = ({
         const canvas = canvasRef.current;
         if(!canvas){ return; }
 
-        let isMounted = true;
+        //let isMounted = true;
         let redraw = () => {};
         let unsubscribe = () => {};
         setLoading(true);
@@ -71,10 +70,11 @@ export const TraitGrid = ({
         const redrawOuter = () => {redraw()};
         window.addEventListener('resize', redrawOuter);
         return () => {
-            isMounted = false;
+            //isMounted = false;
             window.removeEventListener('resize', redrawOuter);
             unsubscribe();
         };
+     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[redrawKey, tokenIds.size, traitSort, isExpanded]);
 
     const heightRatio = Math.max(0.25,Math.min(0.75,tokenIds.size * 0.1));

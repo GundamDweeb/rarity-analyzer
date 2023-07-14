@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { INftProjectMetadata, INftProjectsDocument } from '@crypto-dev-amigos/common';
 import { LazyList } from './lazy-list';
-import { NftLoader } from './nft-loader';
-import { getIpfsUrl, getProjectsJsonUrl } from '../helpers/urls';
-import { LazyComponent } from './lazy-component';
+import {  getProjectsJsonUrl } from '../helpers/urls';
 import { changeTheme } from '../helpers/theme';
-import { SmartImage } from './smart-image';
 import { LoadingIndicator } from './icons';
 import { ProjectInfo } from './nft-project';
 
@@ -21,6 +18,7 @@ export const NftProjectsLoader = (props:{ })=>{
             const obj = await result.json() as INftProjectsDocument;
             setProjectRarity(obj);
         })();
+     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
 return (

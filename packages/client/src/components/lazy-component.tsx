@@ -1,7 +1,7 @@
-import React, { ReactNode, useEffect, useRef, useState } from 'react';
+import  { ReactNode, useEffect, useRef, useState } from 'react';
 import { delay } from '../helpers/delay';
 
-const debug_timeStart = Date.now();
+//const debug_timeStart = Date.now();
 const globalRelayoutCallbacks = [] as (null | (()=>boolean))[];
 let activeNotifyRelayoutId = 0;
 const notifyRelayout = async () => {
@@ -48,7 +48,7 @@ export const LazyComponent = ({
     const placeholderRef = useRef(null as null | HTMLDivElement);
     const [shouldLoad, setShouldLoad] = useState(false);
     const isDoneRef = useRef(false);
-    const lazyComponentId = useRef(nextLazyComponentId++);
+    //const lazyComponentId = useRef(nextLazyComponentId++);
 
     useEffect(() => {
         // console.log('LazyComponent useEffect', {lazyComponentId});
