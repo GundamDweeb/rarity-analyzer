@@ -50,7 +50,6 @@ export const NftLoader = ({
 
                 if(!addy){ return; }
             }
-
             // Load open sea data
             const openSeaData = await getOpenSeaData({ contractAddress: addy, tokenId });
             const lastSellPrice = parseFloat(openSeaData.last_sale?.total_price ?? '0') / Math.pow(10, openSeaData.last_sale?.payment_token.decimals ?? 0);
