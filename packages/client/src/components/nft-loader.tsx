@@ -31,7 +31,7 @@ export const NftLoader = ({
                 setError('Not Found');
                 return;
             }
-            let contractAddress = "";
+            let addy = "";
             obj.attributeRarities.sort((a,b)=>a.trait_type.localeCompare(b.trait_type));
             setNft(obj);
 
@@ -44,14 +44,14 @@ export const NftLoader = ({
                 const obj = await result.json() as INftProjectRarityDocument;
                 //@ts-ignore
                 setContractAdd(obj.project.contract);
-                contractAddress = obj.project.contract;
+                addy = obj.project.contract;
                 changeTheme(obj.project.theme);
 
                 if(!contractAdd){ return; }
             }
 
             // Load open sea data
-            const openSeaData = await getOpenSeaData({ contractAddress, tokenId });
+            const openSeaData = await getOpenSeaData({ contractAddress: addy, tokenId });
             const lastSellPrice = parseFloat(openSeaData.last_sale?.total_price ?? '0') / Math.pow(10, openSeaData.last_sale?.payment_token.decimals ?? 0);
             const lastSellSymbol = openSeaData.last_sale?.payment_token.symbol;
             const lastSellPriceUsd = lastSellPrice * parseFloat(openSeaData.last_sale?.payment_token.usd_price ?? '1');
